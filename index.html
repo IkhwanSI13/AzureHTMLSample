@@ -22,9 +22,35 @@
     </div>
 
     <!-- Wrap the rest of the page in another container to center all the content. -->
-
     <div class="container">
-        
+      <h2>Form Input</h2>
+      <form method="post" action="index.php" enctype="multipart/form-data" >
+        <div class="form-group">
+          <label for="email">NIM:</label>
+          <input type="text" class="form-control" id="nim" placeholder="Masukkan NIM" name="nim">
+        </div>
+        <div class="form-group">
+          <label for="pwd">Nama:</label>
+          <input type="text" class="form-control" id="nama" placeholder="Masukkan nama" name="nama">
+        </div>
+        <div class="form-group">
+          <label for="pwd">Alamat:</label>
+          <input type="text" class="form-control" id="alamat" placeholder="Masukkan alamat" name="alamat">
+        </div>
+        <div class="form-group">
+          <label for="pwd">Kampus:</label>
+          <input type="text" class="form-control" id="kampus" placeholder="Masukkan kampus" name="kampus">
+        </div>
+        <div class="form-group">
+          <label for="pwd">IPK:</label>
+          <input type="number" class="form-control" id="ipk" placeholder="Masukkan ipk" name="ipk">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+      
+    <!--sample-->
+    <div class="container">        
       <div class="row">
         <div class="col-xs-12 col-sm-12">
           <img class="img-rectangle" src="img/azure-portal.png" alt="Azure App Service Web Apps">
