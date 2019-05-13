@@ -43,13 +43,13 @@
                   $nama = $_POST['nama'];
                   $alamat = $_POST['alamat'];
                   $ipk = $_POST['ipk'];
-                  $notfound=true
+                  $notfound = true;
                   //Check
                   $sql_check = "SELECT * FROM input_mahasiswa WHERE nim = ".$nim;
                   $stmt_check = $conn->query($sql_select);
                   $queryCheck = $stmt_check->fetchAll(); 
                   if(count($queryCheck) > 0) {
-                    $notfound=false
+                    $notfound = false;
                   }
 
                   if ($notfound) {
