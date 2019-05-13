@@ -62,13 +62,13 @@
                     $stmt->bindValue(3, $alamat);
                     $stmt->bindValue(4, $ipk);
                     $stmt->execute();
+                    echo "<h3>Data ditambahkan!</h3>";
                   }else{
                     echo "<h3>NIM telah digunakan!</h3>";                    
                   }
               } catch(Exception $e) {
                   echo "Gagal: " . $e;
               }
-              echo "<h3>Data ditambahkan!</h3>";
           } 
 
           try {
