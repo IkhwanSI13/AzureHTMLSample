@@ -43,7 +43,7 @@
           <label for="pwd">IPK:</label>
           <input type="number" step="0.01" class="form-control" id="ipk" placeholder="Masukkan ipk" name="ipk">
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" name="submit" class="btn btn-default">Submit</button>
       </form>
     </div>
 
