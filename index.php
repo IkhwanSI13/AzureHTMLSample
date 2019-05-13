@@ -64,18 +64,18 @@
                 $queryAll = $stmt->fetchAll(); 
                 if(count($queryAll) > 0) {
                     echo "<h2>People who are registered:</h2>";
-                    echo "<table class="table">";
-                    echo "<tr><th>NIM</th>";
+                    echo "<table class='table'>";
+                    echo "<thead><tr><th>NIM</th>";
                     echo "<th>Nama</th>";
                     echo "<th>Alamat</th>";
-                    echo "<th>IPK</th></tr>";
+                    echo "<th>IPK</th></tr></thead><tbody>";
                     foreach($queryAll as $singleData) {
                         echo "<tr><td>".$singleData['nim']."</td>";
                         echo "<td>".$singleData['nama']."</td>";
                         echo "<td>".$singleData['alamat']."</td>";
                         echo "<td>".$singleData['ipk']."</td></tr>";
                     }
-                    echo "</table>";
+                    echo "</tbody></table>";
                 } else {
                     echo "<h3>No one is currently registered.</h3>";
                 }
