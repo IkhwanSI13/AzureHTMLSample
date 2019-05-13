@@ -64,7 +64,7 @@
                 $queryAll = $stmt->fetchAll(); 
                 if(count($queryAll) > 0) {
                     echo "<h2>People who are registered:</h2>";
-                    echo "<table>";
+                    echo "<table class="table">";
                     echo "<tr><th>NIM</th>";
                     echo "<th>Nama</th>";
                     echo "<th>Alamat</th>";
