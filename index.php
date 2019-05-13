@@ -62,23 +62,22 @@
                 $sql_select = "SELECT * FROM input_mahasiswa";
                 $stmt = $conn->query($sql_select);
                 $queryAll = $stmt->fetchAll(); 
+                echo "<table class='table'>";
+                echo "<thead><tr><th>NIM</th>";
+                echo "<th>Nama</th>";
+                echo "<th>Alamat</th>";
+                echo "<th>IPK</th></tr></thead>";
                 if(count($queryAll) > 0) {
-                    echo "<h2>People who are registered:</h2>";
-                    echo "<table class='table'>";
-                    echo "<thead><tr><th>NIM</th>";
-                    echo "<th>Nama</th>";
-                    echo "<th>Alamat</th>";
-                    echo "<th>IPK</th></tr></thead><tbody>";
+                    echo "<tbody>";
                     foreach($queryAll as $singleData) {
                         echo "<tr><td>".$singleData['nim']."</td>";
                         echo "<td>".$singleData['nama']."</td>";
                         echo "<td>".$singleData['alamat']."</td>";
                         echo "<td>".$singleData['ipk']."</td></tr>";
                     }
-                    echo "</tbody></table>";
-                } else {
-                    echo "<h3>No one is currently registered.</h3>";
+                    echo "</tbody>";
                 }
+                echo "</table>";
             } catch(Exception $e) {
                 echo "Gagal: " . $e;
             }
