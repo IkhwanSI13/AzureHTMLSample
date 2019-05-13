@@ -43,15 +43,28 @@
                   $nama = $_POST['nama'];
                   $alamat = $_POST['alamat'];
                   $ipk = $_POST['ipk'];
-                  // Insert data
-                  $sql_insert = "INSERT INTO input_mahasiswa (nim, nama, alamat, ipk) 
-                              VALUES (?,?,?,?)";
-                  $stmt = $conn->prepare($sql_insert);
-                  $stmt->bindValue(1, $nim);
-                  $stmt->bindValue(2, $nama);
-                  $stmt->bindValue(3, $alamat);
-                  $stmt->bindValue(4, $ipk);
-                  $stmt->execute();
+                  $notfound=true
+                  //Check
+                  $sql_check = "SELECT * FROM input_mahasiswa WHERE nim = ".$nim;
+                  $stmt_check = $conn->query($sql_select);
+                  $queryCheck = $stmt_check->fetchAll(); 
+                  if(count($queryCheck) > 0) {
+                    $notfound=false
+                  }
+
+                  if ($notfound) {
+                    // Insert data
+                    $sql_insert = "INSERT INTO input_mahasiswa (nim, nama, alamat, ipk) 
+                                VALUES (?,?,?,?)";
+                    $stmt = $conn->prepare($sql_insert);
+                    $stmt->bindValue(1, $nim);
+                    $stmt->bindValue(2, $nama);
+                    $stmt->bindValue(3, $alamat);
+                    $stmt->bindValue(4, $ipk);
+                    $stmt->execute();
+                  }else{
+                    echo "<h3>NIM telah digunakan!</h3>";                    
+                  }
               } catch(Exception $e) {
                   echo "Gagal: " . $e;
               }
