@@ -62,7 +62,7 @@
                 $sql_select = "SELECT * FROM input_mahasiswa";
                 $stmt = $conn->query($sql_select);
                 $queryAll = $stmt->fetchAll(); 
-                if(count($registrants) > 0) {
+                if(count($queryAll) > 0) {
                     echo "<h2>People who are registered:</h2>";
                     echo "<table>";
                     echo "<tr><th>NIM</th>";
