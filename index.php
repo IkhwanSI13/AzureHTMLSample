@@ -44,7 +44,7 @@
                   $alamat = $_POST['alamat'];
                   $ipk = $_POST['ipk'];
                   // Insert data
-                  $sql_insert = "INSERT INTO Mahasiwa (nim, nama, alamat, ipk) 
+                  $sql_insert = "INSERT INTO input_mahasiswa (nim, nama, alamat, ipk) 
                               VALUES (?,?,?,?)";
                   $stmt = $conn->prepare($sql_insert);
                   $stmt->bindValue(1, $nim);
@@ -59,7 +59,7 @@
           } 
 
           try {
-                $sql_select = "SELECT * FROM Mahasiswa";
+                $sql_select = "SELECT * FROM input_mahasiswa";
                 $stmt = $conn->query($sql_select);
                 $queryAll = $stmt->fetchAll(); 
                 if(count($registrants) > 0) {
