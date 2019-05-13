@@ -46,7 +46,7 @@
                   $notfound = true;
                   //Check
                   $sql_check = "SELECT * FROM input_mahasiswa WHERE nim = ".$nim;
-                  $stmt_check = $conn->query($sql_select);
+                  $stmt_check = $conn->query($sql_check);
                   $queryCheck = $stmt_check->fetchAll(); 
                   if(count($queryCheck) > 0) {
                     $notfound = false;
